@@ -18,8 +18,8 @@ import java.util.*;
 /**
  * web容器对servlet仅实例化一次。该servlet生命周期伴随着整个web项目，也就是说仅存在1个，因此不用考虑线程安全问题。
  * list和map初始化大小需要根据项目中实际情况指定。
- *      如标记多少个bean就可以大致计算出需要多个个iocMap，
- *      有多少个需要扫描的类就可以大致计算出classNames大小。
+ * 如标记多少个bean就可以大致计算出需要多个个iocMap，
+ * 有多少个需要扫描的类就可以大致计算出classNames大小。
  */
 public class MyDispatcherServlet extends HttpServlet {
     /**
@@ -130,8 +130,14 @@ public class MyDispatcherServlet extends HttpServlet {
     }
 
 
+    //把web.xml中的contextConfigLocation对应value值的文件加载到留里面
     private void doLoadConfig(String location) {
-        //把web.xml中的contextConfigLocation对应value值的文件加载到留里面
+        if (location.startsWith("classpath:")) {
+            location = location.replace("classpath:", "");
+        } else if (location.contains("/")) {
+            int lastSplitIndex = location.lastIndexOf('/');
+            location = location.substring(lastSplitIndex + 1, location.length());
+        }
         InputStream resourceAsStream = this.getClass().getClassLoader().getResourceAsStream(location);
         try {
             //用Properties文件加载文件里的内容
@@ -215,8 +221,15 @@ public class MyDispatcherServlet extends HttpServlet {
                     url = (baseUrl + "/" + url).replaceAll("/+", "/");
                     //这里应该放置实例和method
                     handlerMapping.put(url, method);
-                    controllerMap.put(url, clazz.newInstance());
-                    System.out.println(url + "," + method);
+                    //避免clazz被重复实例化
+                    Object tmpValue = null;
+                    String ctlName = toLowerFirstWord(clazz.getSimpleName());
+                    if(ioc.containsKey(ctlName)){
+                        tmpValue = ioc.get(ctlName);
+                    }else{
+                        tmpValue = clazz.newInstance();
+                    }
+                    controllerMap.put(url, tmpValue);
                 }
             }
         } catch (Exception e) {
