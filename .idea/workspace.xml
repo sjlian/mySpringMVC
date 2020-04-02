@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b3cde54d-d8fd-4480-8935-3d8dde6e1dfe" name="Default Changelist" comment="" />
+    <list default="true" id="b3cde54d-d8fd-4480-8935-3d8dde6e1dfe" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/spring/core/MyDispatcherServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/spring/core/MyDispatcherServlet.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -15,6 +21,9 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
@@ -23,6 +32,7 @@
     </option>
   </component>
   <component name="ProjectId" id="1ZxxFGTVVHOAfqOwomruBFORc11" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -30,12 +40,16 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.example.spring.annotation" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
     </key>
   </component>
   <component name="RunManager">
@@ -95,7 +109,7 @@
       <option name="presentableId" value="Default" />
       <updated>1585794440628</updated>
       <workItem from="1585794441914" duration="3550000" />
-      <workItem from="1585798162829" duration="138000" />
+      <workItem from="1585798162829" duration="7243000" />
     </task>
     <servers />
   </component>
@@ -120,5 +134,9 @@
       <screen x="0" y="23" width="1440" height="793" />
     </state>
     <state width="1388" height="24" key="GridCell.Tab.0.right/0.23.1440.793@0.23.1440.793" timestamp="1585798039042" />
+    <state x="513" y="140" width="670" height="676" key="search.everywhere.popup" timestamp="1585807187411">
+      <screen x="0" y="23" width="1440" height="793" />
+    </state>
+    <state x="513" y="140" width="670" height="676" key="search.everywhere.popup/0.23.1440.793@0.23.1440.793" timestamp="1585807187411" />
   </component>
 </project>

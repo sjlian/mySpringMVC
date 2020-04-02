@@ -91,6 +91,7 @@ public class MyDispatcherServlet extends HttpServlet {
 
         //获取方法的参数列表
         Class<?>[] parameterTypes = method.getParameterTypes();
+        Class returnType = method.getReturnType();
         //获取请求的参数
         Map<String, String[]> parameterMap = req.getParameterMap();
         //保存参数值
@@ -117,12 +118,15 @@ public class MyDispatcherServlet extends HttpServlet {
             }
         }
         //利用反射机制来调用
+        String responseResult = "";
         try {
             //obj是method所对应的实例 在ioc容器中
-            method.invoke(this.controllerMap.get(url), paramValues);
+            Object result = method.invoke(this.controllerMap.get(url), paramValues);
+            responseResult = returnType.cast(result).toString();
         } catch (Exception e) {
             e.printStackTrace();
         }
+        resp.getWriter().write(responseResult);
     }
 
 
